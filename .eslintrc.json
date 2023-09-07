@@ -6,9 +6,11 @@
   "extends": ["airbnb-typescript/base", "prettier"],
   "parserOptions": {
     "project": "./tsconfig.json",
+    "tsconfigRootDir": "./",
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["vite.config.js", "dist/"],
   "plugins": ["@typescript-eslint", "import"],
   "rules": {
     "no-console": "off"
