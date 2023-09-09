@@ -64,19 +64,20 @@ header {
 .nav-item {
   a {
     position: relative;
-    color: #ffffff;
+    transition: all 0.2s ease-in-out;
     font-weight: bold;
+    color: #ffffff;
 
     &::after {
       content: "";
       position: absolute;
       left: 50%;
       bottom: -8px;
+      transform: translateX(-50%);
+      transition: width 0.3s;
       width: 0;
       height: 2px;
       background-color: #ffffff;
-      transition: width 0.3s;
-      transform: translateX(-50%);
       pointer-events: none;
     }
 
