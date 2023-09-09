@@ -66,9 +66,13 @@ header {
 }
 
 #home {
-  background-color: beige;
+  background-color: aqua;
 }
 
 #projects {
   background-color: burlywood ;
+}
+
+footer {
+  background-color: grey;
 }
