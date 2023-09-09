@@ -70,12 +70,13 @@ header {
     &::after {
       content: "";
       position: absolute;
-      left: 0;
+      left: 50%;
       bottom: -8px;
       width: 0;
       height: 2px;
       background-color: #ffffff;
       transition: width 0.3s;
+      transform: translateX(-50%);
       pointer-events: none;
     }
 
