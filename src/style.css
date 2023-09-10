@@ -41,8 +41,14 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 4em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.1;
+  margin-bottom: 1.6rem;
 }
 
 header {
@@ -103,12 +109,21 @@ header {
   }
 }
 
+section {
+  padding: 2rem;
+}
+
 #home {
   background-color: aqua;
-  padding: 5rem;
 }
 
 #about {
+}
+
+.about-text {
+  p {
+    margin-bottom: 1.6rem;
+  }
 }
 
 .tech-stack {
