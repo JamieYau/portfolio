@@ -5,7 +5,7 @@ function setHomePageHeight() {
   const headerHeight = header.offsetHeight;
   const windowHeight = window.innerHeight;
   const homePage = document.querySelector("#home") as HTMLElement;
-  homePage.style.height = windowHeight - headerHeight + "px";
+  homePage.style.minHeight = windowHeight - headerHeight + "px";
 }
 
 function smoothScrollToTarget(targetHref: string) {

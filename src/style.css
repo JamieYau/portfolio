@@ -108,6 +108,31 @@ header {
   padding: 5rem;
 }
 
+#about {
+}
+
+.tech-stack {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid #000000;
+      border-radius: 0.8rem;
+      background-color: #ffffff;
+      box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
+
+      i {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
 #projects {
   background-color: burlywood;
 }
