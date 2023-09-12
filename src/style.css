@@ -164,42 +164,48 @@ section {
 #projects {
   background-color: burlywood;
 
-  .project {
+  .project-container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "title title"
-      "preview description"
-      "links links";
-    padding: 1.6rem;
-    border: 1px solid #000000;
-    border-radius: 0.8rem;
-    background-color: #ffffff;
-    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.6rem;
+  }
+}
 
-    .project-title {
-      font-size: 1.6em;
-      font-weight: bold;
-      grid-area: title;
-    }
+.project {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "title title"
+    "preview description"
+    "links links";
+  padding: 1.6rem;
+  border: 1px solid #000000;
+  border-radius: 0.8rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
 
-    .project-preview {
-      grid-area: preview;
-    }
+  .project-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    grid-area: title;
+  }
 
-    .project-description {
-      grid-area: description;
-      font-size: 1.2em;
-    }
+  .project-preview {
+    grid-area: preview;
+  }
 
-    .project-links {
-      grid-area: links;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.6rem;
-    }
+  .project-description {
+    grid-area: description;
+    font-size: 1.2em;
+  }
+
+  .project-links {
+    grid-area: links;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
   }
 }
 
