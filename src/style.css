@@ -188,9 +188,9 @@ section {
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
 
   .project-title {
+    grid-area: title;
     font-size: 1.6em;
     font-weight: bold;
-    grid-area: title;
   }
 
   .project-preview {
@@ -228,10 +228,22 @@ footer {
 @media (min-width: 480px) {
   .project {
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: min-content auto auto;
     grid-template-areas:
-      "title title"
+      "empty title"
       "preview description"
       "links links";
+
+    &:nth-child(even) {
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "title empty"
+        "description preview"
+        "links links";
+
+      .project-links {
+        justify-content: flex-start;
+      }
+    }
   }
 }
