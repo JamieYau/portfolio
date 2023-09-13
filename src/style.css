@@ -74,6 +74,15 @@ header {
 }
 
 .nav-item {
+  &.active {
+    a {
+      color: #535bf2;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
   a {
     position: relative;
     transition: all 0.2s ease-in-out;
@@ -100,14 +109,9 @@ header {
         width: 100%;
       }
     }
-    &:focus {
-      outline: none;
-      border: none;
-      color: #b8f253;
 
-      &::after {
-        width: 100%;
-      }
+    &:focus {
+      border: none;
     }
   }
 }
@@ -197,6 +201,7 @@ section {
   .project-preview {
     grid-area: preview;
     max-width: 100%;
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   }
 
   .project-description {
@@ -222,6 +227,11 @@ section {
   }
 }
 
+#contact {
+  min-height: 100vh;
+  background-color: darkseagreen;
+}
+
 footer {
   background-color: grey;
 }
@@ -237,7 +247,6 @@ footer {
 
     .project-preview {
       transform: perspective(1000px) rotateY(20deg);
-      box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
     }
 
     &:nth-child(even) {
