@@ -62,11 +62,11 @@ h2 {
 header {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 500;
   width: 100%;
   padding: 1.6rem;
   background-color: #242424;
-  opacity: 0.9;
+  opacity: 0.98;
 }
 
 #nav-bar {
@@ -176,7 +176,7 @@ section {
   }
 }
 #projects {
-  background-color: burlywood;
+  background-color: white;
 
   .project-container {
     display: flex;
@@ -196,26 +196,30 @@ section {
     "links";
   gap: 1rem;
   padding: 1.6rem;
-  border: 1px solid #000000;
   border-radius: 0.8rem;
-  background-color: #ffffff;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
 
   .project-title {
     grid-area: title;
+    color: #535bf2;
     font-size: 1.6em;
     font-weight: bold;
   }
 
-  .project-preview {
+  .project-preview-container {
     grid-area: preview;
+    position: relative;
+  }
+
+  .project-preview {
     max-width: 100%;
     box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
   }
 
   .project-description {
     grid-area: description;
-    font-size: 1.2em;
+    font-size: 1em;
+    border-bottom: 1px solid #4a4a4a;
   }
 
   .project-links {
@@ -223,15 +227,16 @@ section {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.6rem;
+    gap: 1rem;
 
     a {
       font-weight: bold;
       color: #ffffff;
       background-color: #646cff;
       border-radius: 0.8rem;
-      padding: 0.8rem;
+      padding: 0.5rem;
       transition: all 0.2s ease-in-out;
+      font-size: 0.8em;
     }
   }
 }
@@ -254,8 +259,22 @@ footer {
       "preview description"
       "links links";
 
+    .project-preview-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(50, 50, 50, 0.422); /* Adjust the color and opacity as needed */
+      transform: perspective(1000px) rotateY(20deg) translateZ(-100px);
+      z-index: 100;
+    }
+
     .project-preview {
       transform: perspective(1000px) rotateY(20deg);
+      position: relative;
+      z-index: 200; /* Make sure the image appears above the background */
     }
 
     &:nth-child(even) {
@@ -264,6 +283,10 @@ footer {
         "title empty"
         "description preview"
         "links links";
+
+      .project-preview-container::after {
+        transform: perspective(1000px) rotateY(-20deg) translateZ(-100px);
+      }
 
       .project-links {
         justify-content: flex-start;
