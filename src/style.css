@@ -218,7 +218,7 @@ section {
 
   .project-description {
     grid-area: description;
-    font-size: 1em;
+    font-size: 1.6em;
     border-bottom: 1px solid #4a4a4a;
   }
 
@@ -236,7 +236,7 @@ section {
       border-radius: 0.8rem;
       padding: 0.5rem;
       transition: all 0.2s ease-in-out;
-      font-size: 0.8em;
+      font-size: 1em;
     }
   }
 }

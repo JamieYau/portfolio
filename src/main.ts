@@ -18,7 +18,7 @@ function setActiveLink() {
   let currentSection: HTMLElement | null = null;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - headerHeight; // Adjust for header height
+    const sectionTop = section.offsetTop - headerHeight - 1; // Adjust for header height
 
     if (window.scrollY >= sectionTop) {
       currentSection = section;
