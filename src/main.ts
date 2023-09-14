@@ -42,6 +42,13 @@ function setActiveLink() {
   }
 }
 
+function setScrollPadding() {
+  const header = document.querySelector("header") as HTMLHeadElement;
+  const headerHeight = header.offsetHeight;
+  const html = document.querySelector("html") as HTMLElement;
+  html.style.scrollPaddingTop = headerHeight + "px";
+}
+
 function smoothScrollToTarget(targetHref: string) {
   const header = document.querySelector("header") as HTMLHeadElement;
   const headerHeight = header.offsetHeight;
@@ -50,10 +57,8 @@ function smoothScrollToTarget(targetHref: string) {
 
   if (target) {
     const targetPosition = target.getBoundingClientRect().top - headerHeight;
-
     window.scrollTo({
       top: targetPosition + window.scrollY,
-      behavior: "smooth",
     });
   }
 }
@@ -62,6 +67,7 @@ function smoothScrollToTarget(targetHref: string) {
 window.addEventListener("load", () => {
   setHomePageHeight();
   setActiveLink();
+  setScrollPadding();
 });
 
 // Offset the anchor links to account for the header

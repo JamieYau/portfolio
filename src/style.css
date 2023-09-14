@@ -20,6 +20,11 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
 li {
   list-style: none;
 }
@@ -40,6 +45,7 @@ body {
   flex-direction: column;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #000000;
 }
 
 h1 {
@@ -60,6 +66,7 @@ header {
   width: 100%;
   padding: 1.6rem;
   background-color: #242424;
+  opacity: 0.9;
 }
 
 #nav-bar {
@@ -117,6 +124,7 @@ header {
 }
 
 section {
+  scroll-snap-align: start;
   padding: 2rem;
   box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.2);
 }
@@ -126,6 +134,7 @@ section {
 }
 
 #about {
+  background-color: white;
 }
 
 .about-text {
