@@ -321,3 +321,9 @@ footer {
     }
   }
 }
+
+@media (min-width: 1080px) {
+  section {
+    padding: 4rem;
+  }
+}
