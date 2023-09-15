@@ -1,11 +1,17 @@
 import "./style.css";
 
-function setHomePageHeight() {
+function setSectionHeight(sections: HTMLElement[]) {
   const header = document.querySelector("header") as HTMLHeadElement;
   const headerHeight = header.offsetHeight;
   const windowHeight = window.innerHeight;
-  const homePage = document.querySelector("#home") as HTMLElement;
-  homePage.style.minHeight = windowHeight - headerHeight + "px";
+  let footerHeight = 0;
+  for (let section of sections) {
+    if (section.id === "contact") {
+      const footer = document.querySelector("footer") as HTMLElement;
+      footerHeight = footer.offsetHeight;
+    }
+    section.style.minHeight = windowHeight - headerHeight - footerHeight + "px";
+  }
 }
 
 // function that changes the active link in the header
@@ -18,7 +24,7 @@ function setActiveLink() {
   let currentSection: HTMLElement | null = null;
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - headerHeight - 1; // Adjust for header height
+    const sectionTop = section.offsetTop - headerHeight; // Adjust for header height
 
     if (window.scrollY >= sectionTop) {
       currentSection = section;
@@ -65,7 +71,9 @@ function smoothScrollToTarget(targetHref: string) {
 
 // Call setHomePageHeight when the page loads
 window.addEventListener("load", () => {
-  setHomePageHeight();
+  const homePage = document.querySelector("#home") as HTMLElement;
+  const contact = document.querySelector("#contact") as HTMLElement;
+  setSectionHeight([homePage, contact]);
   setActiveLink();
   setScrollPadding();
 });
